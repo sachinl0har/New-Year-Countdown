@@ -13,7 +13,7 @@
     <meta name="referrer" content="no-referrer">
     <meta content="IE=Edge" http-equiv="X-UA-Compatible">
     <meta charset="utf-8">
-       <meta property="og:site_name" content= "New Year Countdown">
+    <meta property="og:site_name" content= "New Year Countdown">
     <meta content="Every New year brings us new story" property="og:description">
     <meta content="https://images-ext-2.discordapp.net/external/26f_oJ5O-1eueuQ8GQCjAsXBzKaFdwwILFHw10H6gOk/https/cdn.discordapp.com/emojis/729442670597898241.gif" property="og:image">
     <meta name="theme-color" content="#ff0000">
@@ -25,76 +25,14 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="icon" href="https://images-ext-2.discordapp.net/external/26f_oJ5O-1eueuQ8GQCjAsXBzKaFdwwILFHw10H6gOk/https/cdn.discordapp.com/emojis/729442670597898241.gif" />
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="<%= currentdate %>.png" />
     <script src="https://unpkg.com/applause-button@3.3.2/dist/applause-button.js"></script>
 
     <!-- Title -->
     <title id="year"></title>
 
-    <!-- Custom CSS -->
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            outline: none;
-            box-sizing: border-box;
-            font-family: Poppins, sans-serif;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            -o-user-select: none;
-            user-select: none;
-        }
-
-        body {
-            background: #020202;
-            overflow-x: hidden;
-            scrollbar-width: thin;
-            color: #ffffff;
-        }
-
-        body::-webkit-scrollbar {
-            width: 11px;
-        }
-
-        h1 {
-            font-size: 45px;
-        }
-
-        h0 {
-            font-size: 95px;
-            font-family: sans-serif;
-        }
-
-
-
-        .time {
-            background: #272727;
-            border-radius: 10px;
-        }
-
-        .time h1 {
-            padding: 40px 0px 26px 0px;
-            font-size: 50px;
-        }
-
-        .mini {
-            background: #222222;
-            font-size: 25px;
-            padding: 8px 0;
-            border-radius: 0px 0px 10px 10px;
-        }
-
-        a {
-            color: rgb(255, 0, 0);
-        }
-
-        a:hover {
-            color: rgb(255, 255, 255);
-        }
-
-    </style>
 </head>
 
 <body onclick="play();">
@@ -159,43 +97,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
     </script>
-    <!-- Custom JS -->
-    <script>
-        const currentyear = new Date().getFullYear();
-        const currentdate = new Date().getDate()
-
-        const audio = document.getElementById("audio");
-        const days = document.getElementById("days");
-        const hours = document.getElementById("hours");
-        const minutes = document.getElementById("minutes");
-        const seconds = document.getElementById("seconds");
-        const countDown = document.getElementById("countdown");
-        const currentYear = new Date().getFullYear();
-        const newYearTime = new Date(`January 01 ${currentYear + 1} 00:00:00`);
-        document.getElementById("year").innerHTML = currentYear + 1 + " | Sachin Lohar"
-        document.getElementById("currentyear").innerHTML = currentYear + 1
-
-        function play() {
-            audio.play();
-            audio.loop = true;
-        }
-
-        function updateCountDown() {
-            const currentTime = new Date();
-            diff = newYearTime - currentTime;
-            const d = Math.floor(diff / 1000 / 60 / 60 / 24);
-            const h = Math.floor(diff / 1000 / 60 / 60) % 24;
-            const m = Math.floor(diff / 1000 / 60) % 60;
-            const s = Math.floor(diff / 1000) % 60;
-            days.innerHTML = d;
-            hours.innerHTML = h < 10 ? "0" + h : h;
-            minutes.innerHTML = m < 10 ? "0" + m : m;
-            seconds.innerHTML = s < 10 ? "0" + s : s;
-        }
-        setInterval(updateCountDown, 1000);
-
-  
-    </script>
+    <script src="main.js"></script>
 </body>
 
 </html>
